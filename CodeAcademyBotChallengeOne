@@ -1,0 +1,24 @@
+t1 = 461620205
+t2 = [[461620203,1], 
+ [461620204,2], 
+ [461620205,6], 
+ [461620206,5], 
+ [461620207,3], 
+ [461620207,5], 
+ [461620208,1]]
+
+
+
+def incrementalBackups(lastBackupTime, changes):
+	updated_list = []
+	final_list = []
+	finally_list = []
+	for d in changes:
+		if d[0] > lastBackupTime:
+			updated_list.append(d[1])
+	for number in updated_list:
+		if number not in final_list:
+			final_list.append(number)
+			final_list.sort()
+	return final_list			 
+print incrementalBackups(t1,t2)
